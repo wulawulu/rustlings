@@ -25,7 +25,7 @@
 // I AM NOT DONE
 
 use std::error;
-use std::fmt;
+use std::fmt::*;
 use std::num::ParseIntError;
 
 // TODO: update the return type of `main()` to make this compile.
