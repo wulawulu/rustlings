@@ -12,6 +12,7 @@
 // I AM NOT DONE
 
 use std::num::ParseIntError;
+use std::string::ParseError;
 
 // This is a custom error type that we will be using in `parse_pos_nonzero()`.
 #[derive(PartialEq, Debug)]
@@ -25,7 +26,9 @@ impl ParsePosNonzeroError {
         ParsePosNonzeroError::Creation(err)
     }
     // TODO: add another error conversion function here.
-    // fn from_parseint...
+    fn from_parseint(e:ParseError)->ParsePosNonzeroError{
+        ParsePosNonzeroError::ParseInt(ParseIntError{})
+    }
 }
 
 fn parse_pos_nonzero(s: &str) -> Result<PositiveNonzeroInteger, ParsePosNonzeroError> {
